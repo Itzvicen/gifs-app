@@ -1,0 +1,15 @@
+<div class="flex flex-col w-full">
+    <div class="flex flex-wrap justify-center w-[90%] p-6 m-auto gap-6">
+        @if (isLoading) {
+            <h3>Cargando...</h3>
+        }
+        @for (gif of gifs$ | async; track $index) {
+            <div class="w-[23%] rounded-md">
+                <img [src]="gif.images.original.url" class="w-full h-64 rounded-md object-cover" alt="Gif image">
+                <p class="flex items-center justify-center text-center text-white font-semibold py-2 px-2 h-16 mt-2 bg-zinc-800 rounded-md">{{ gif.title }}</p>
+            </div>
+        } @empty {
+            <p class="text-zinc-500">Comienza a buscar gifs ✨</p>
+        }
+    </div>
+</div>
