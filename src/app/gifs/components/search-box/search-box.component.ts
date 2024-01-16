@@ -25,5 +25,8 @@ export class SearchBoxComponent {
 
         this.searchEvent.emit(newTag);
         console.log(newTag); // Muestra por consola lo que se busca
+
+        // Limpia el input después de la búsqueda
+        this.tagInput.nativeElement.value = '';
     }
 }

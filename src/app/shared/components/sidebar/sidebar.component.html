@@ -4,7 +4,7 @@
 
     <ul class="mt-2">
         @for (tag of gifsService.tagsHistory; track $index) {
-            <li class="first-letter:uppercase text-sm text-zinc-400 bg-zinc-700 py-1 px-2 rounded-md mb-1" >{{ tag }}</li>
+            <li class="first-letter:uppercase text-sm text-zinc-400 bg-zinc-700 py-1 px-2 rounded-md mb-1 cursor-pointer" (click)="searchTag(tag)" >{{ tag }}</li>
         } @empty {
             <li class="text-zinc-500 text-sm">No hay busquedas</li>
         }

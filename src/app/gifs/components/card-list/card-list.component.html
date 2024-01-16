@@ -5,7 +5,7 @@
         }
         @for (gif of gifs$ | async; track $index) {
             <div class="w-[23%] rounded-md">
-                <img [src]="gif.images.original.url" class="w-full h-64 rounded-md object-cover" alt="Gif image">
+                <img [src]="gif.images.downsized_medium.url" class="w-full h-64 rounded-md object-cover" alt="Gif image">
                 <p class="flex items-center justify-center text-center text-white font-semibold py-2 px-2 h-16 mt-2 bg-zinc-800 rounded-md">{{ gif.title }}</p>
             </div>
         } @empty {

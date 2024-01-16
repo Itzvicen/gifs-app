@@ -26,8 +26,8 @@ export class GifsService {
 
   async searchTag(tag: string):Promise<void> {
     tag = tag.trim().toLocaleLowerCase();
-
-    if(!this._tagsHistory.includes(tag)) {
+    
+    if(tag.length > 0) {
       this._tagsHistory.unshift(tag);
       this._tagsHistory = this._tagsHistory.splice(0,10);
       localStorage.setItem('tagsHistory', JSON.stringify(this._tagsHistory));
@@ -38,6 +38,7 @@ export class GifsService {
       const {data} = await response.json();
 
       this._searchResults.next(data);
+      console.log(this._searchResults.value)
     }
   }
 }

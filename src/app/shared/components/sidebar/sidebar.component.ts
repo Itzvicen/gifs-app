@@ -8,4 +8,8 @@ import { GifsService } from '../../../gifs/services/gifs.service';
 
 export class SidebarComponent {
   constructor(public gifsService: GifsService) { }
+
+  searchTag(tag: string): void {
+    this.gifsService.searchTag(tag);
+  }
 }
